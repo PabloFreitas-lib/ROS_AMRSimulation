@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /RobotModel1
+        - /Map1
       Splitter Ratio: 0.5
     Tree Height: 435
   - Class: rviz/Selection
@@ -25,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -59,27 +61,65 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        camera:
+        back_motor_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chassis:
+        back_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hokuyo:
+        base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_wheel:
+        base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_wheel:
+        elevator_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_motor_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser_back:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_front:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        logo_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        side_wheel_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        side_wheel_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -131,19 +171,51 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        back_motor_wheel:
+          Value: true
+        back_wheel:
+          Value: true
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        elevator_link:
+          Value: true
+        front_motor_wheel:
+          Value: true
+        front_wheel:
+          Value: true
+        imu_link:
+          Value: true
+        laser_back:
+          Value: true
+        laser_front:
+          Value: true
+        logo_link:
+          Value: true
+        map:
+          Value: true
+        odom:
+          Value: true
+        side_wheel_left:
+          Value: true
+        side_wheel_right:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        map:
+          odom:
+            {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Angle Tolerance: 0.100000001
       Class: rviz/Odometry
       Covariance:
@@ -161,7 +233,7 @@ Visualization Manager:
           Scale: 1
           Value: true
         Value: true
-      Enabled: false
+      Enabled: true
       Keep: 100
       Name: Odometry
       Position Tolerance: 0.100000001
@@ -177,7 +249,7 @@ Visualization Manager:
         Value: Arrow
       Topic: ""
       Unreliable: false
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48

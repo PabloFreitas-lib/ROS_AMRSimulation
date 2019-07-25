@@ -6,32 +6,33 @@
        <robotNamespace>/agvs</robotNamespace>
        <controlPeriod>0.001</controlPeriod>
 	   <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS> <!--added after -->
     </plugin>
   </gazebo>
 
   <gazebo reference="base_footprint">
     <material>Gazebo/Green</material>
   </gazebo>
-  
+
   <gazebo reference="base_link">
     <material>Gazebo/Red</material>
   </gazebo>
 
   <gazebo reference="back_wheel">
-    <mu1 value="1.0"/> 
-    <mu2 value="1.0"/> 
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
     <fdir1 value="0 0 0"/>
-    <kp value="1000000000.0"/> 
-    <kd value="1.0" />    
+    <kp value="1000000000.0"/>
+    <kd value="1.0" />
     <material>Gazebo/Grey</material>
   </gazebo>
 
   <gazebo reference="front_wheel">
-    <mu1 value="1.0"/> 
-    <mu2 value="1.0"/> 
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
     <fdir1 value="0 0 0"/>
     <kp value="1000000000.0"/>
-    <kd value="1.0" />    
+    <kd value="1.0" />
     <material>Gazebo/Grey</material>
   </gazebo>
 
@@ -44,16 +45,16 @@
   </gazebo>
 
   <gazebo reference="side_wheel_right">
-    <mu1 value="1.0"/> 
-    <mu2 value="1.0"/> 
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
     <fdir1 value="0 0 0"/>
     <!-- kp value="1000000.0"/>
-    <kd value="1.0" / -->    
+    <kd value="1.0" / -->
     <!-- value ok for 25kg robot mass -->
     <!-- kp value="10000.0"/>
     <kd value="1.0" / -->
     <kp value="1000000000.0"/>
-    <kd value="1.0"/>        
+    <kd value="1.0"/>
     <material>Gazebo/Grey</material>
   </gazebo>
 
@@ -61,7 +62,7 @@
     <mu1 value="1.0"/> <!-- 2.0 -->
     <mu2 value="1.0"/> <!-- 0.5 -->
     <kp value="1000000000.0"/>
-    <kd value="1.0"/>        
+    <kd value="1.0"/>
     <fdir1 value="0 0 0"/>
     <material>Gazebo/Grey</material>
   </gazebo>
@@ -69,7 +70,7 @@
   <gazebo reference="elevator_link">
     <material>Gazebo/Grey</material>
     <kp value="1000000000.0"/>
-    <kd value="1.0"/>  
+    <kd value="1.0"/>
   </gazebo>
 
   <!-- sick laser -->
@@ -88,7 +89,7 @@
             <max_angle>1.570796</max_angle>
            <!--samples>1081</samples>
            <resolution>1</resolution>
-           <min_angle>2.35619449</min_angle> 
+           <min_angle>2.35619449</min_angle>
            <max_angle>-2.35619449</max_angle -->
           </horizontal>
         </scan>
@@ -138,7 +139,7 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      
+
       <plugin name="gazebo_ros_front_sick_controller" filename="libgazebo_ros_laser.so">
         <topicName>/scan</topicName>
         <frameName>laser_back</frameName>
@@ -152,8 +153,8 @@
        <topicName>imu_data</topicName>
 		<bodyName>imu_link </bodyName>
 		<serviceName>/imu_service</serviceName>
-        <gaussianNoise>0.005</gaussianNoise>		
+        <gaussianNoise>0.005</gaussianNoise>
     </plugin>
   </gazebo>
-  
+
 </robot>
