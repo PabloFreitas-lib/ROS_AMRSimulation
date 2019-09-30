@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot
+<robot 
      xmlns:xacro="http://www.ros.org/wiki/xacro" name="casters">
-
+ 
     <xacro:macro name="caster" params="prefix reflect">
         <link name="castdrop_${prefix}">
             <visual>
@@ -109,5 +109,5 @@
         </joint>
     </xacro:macro>
     <xacro:caster prefix="left" reflect="1"/>
-    <xacro:caster prefix="right" reflect="-1"/>
+    <xacro:caster prefix="right" reflect="-1"/>    
 </robot>
