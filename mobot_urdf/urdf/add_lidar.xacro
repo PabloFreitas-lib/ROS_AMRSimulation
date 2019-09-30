@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot 
+<robot
      xmlns:xacro="http://www.ros.org/wiki/xacro" name="gazebo_tags">
-       
+
    <!-- add a simulated lidar, including visual, collision and inertial properties, and physics simulation-->
   <link name="lidar_link">
       <!-- coarse LIDAR model; a simple box -->
@@ -28,15 +28,15 @@
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
       </inertial>
+      <joint name="lidar_joint" type="fixed">
+        <axis xyz="0 1 0" />
+        <origin xyz="0.1 0 0.56" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+      </joint>
   </link>
   <!--the above displays a box meant to imply Lidar-->
 
-  <joint name="lidar_joint" type="fixed">
-      <axis xyz="0 1 0" />
-      <origin xyz="0.1 0 0.56" rpy="0 0 0"/>
-      <parent link="base_link"/>
-      <child link="lidar_link"/>
-  </joint>
     <!-- here is the gazebo plug-in to simulate a lidar sensor -->
   <gazebo reference="lidar_link">
     <sensor type="ray" name="sick_lidar_sensor">
@@ -68,6 +68,6 @@
         <frameName>lidar_link</frameName>
       </plugin>
     </sensor>
-  </gazebo>  
+  </gazebo>
 
 </robot>
